@@ -1,1 +1,1 @@
-Esse é um repositório
+Esse é um repositório de estudos back-end
