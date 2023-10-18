@@ -80,7 +80,7 @@ aside > ul > a > li {
 
 aside > ul > a > li:hover {
     background-color: rgba(209, 159, 108, 0.537);
-    border-left: 1px solid orange;
+    border-left: 3px solid orange;
 }
 
 aside {
