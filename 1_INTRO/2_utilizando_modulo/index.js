@@ -1,3 +1,5 @@
 const fs = required('fs') // file system
 
-fs.readFile
+fs.readFile('arquivo.txt', 'utf8', (err, data) => {
+
+})
