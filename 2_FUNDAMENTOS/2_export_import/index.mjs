@@ -1,4 +1,5 @@
-import soma from './meu_modulo.mjs'
+const meuModulo = require('./meu_modulo')
+const soma = 
 
-soma(2, 3),
-soma(10, 3)
+soma(2, 3)
+soma(5, 10)
