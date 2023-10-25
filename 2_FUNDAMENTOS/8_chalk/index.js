@@ -1,5 +1,5 @@
-const chalk = require('chalk')
+const chalk = require('chalk');
 
-const nota = 9
+const nota = 9;
 
-console.log()
+console.log(chalk.green("Parabéns! você está aprovado!!"));
