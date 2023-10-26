@@ -1,5 +1,9 @@
-const chalk = require('chalk');
+const chalk = require('chalk')
 
-const nota = 9;
+const nota = 9
 
-console.log(chalk.green("Parabéns! você está aprovado!!"));
+if(nota >= 7){
+    console.log(chalk.green.bold("Aluno aprovado! :)"))
+}else{
+    console.log(chalk.red.bold("Você vai precisar de recuperação. :("))
+}
