@@ -3,8 +3,13 @@ const readline = require('readline').createInterface({
     output:process.stdout,
 })
 
-readline.question('Qual o seu estado favorito?', (estados) => {
-    console.log(`Meu estado favorito é ${estados}`)
+readline.question('Qual sua linguagem favorita?', (language) => {
+    if(language === "Javascript"){
+        console.log("Parabéns por ter bom gosto!")
+    }else{
+        console.log("Isso nme é linguagem.")
+    }
+    console.log(`A minha linguagem preferida é: ${language}`)
     readline.close()
 })
 
