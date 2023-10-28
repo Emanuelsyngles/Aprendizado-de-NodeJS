@@ -19,8 +19,7 @@ inquirer
     if(media < 7 ) {
         console.log('Você entrou em processo de recuperação.')
     }else {
-        
-    }
 
+    }
 })
 .catch((err) => console.log(err))
