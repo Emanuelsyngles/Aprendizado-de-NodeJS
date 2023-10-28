@@ -1,9 +1,10 @@
 const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout,
+    input:process.stdin,
+    output:process.stdout,
 })
 
-readline.question('Qual a sua linguagem preferida?', (language) => {
-    console.log(`A minha linguagem favorita é: ${language}`)
+readline.question('Qual o seu estado favorito?', (estados) => {
+    console.log(`Meu estado favorito é ${estados}`)
     readline.close()
 })
+
