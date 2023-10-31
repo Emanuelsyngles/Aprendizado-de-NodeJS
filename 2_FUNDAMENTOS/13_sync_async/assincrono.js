@@ -1,10 +1,10 @@
-const fs = require('fs') 
+const fs = require('fs')
 
 console.log('Inicio')
 
-fs.watchFile('objeto.txt', 'Esse é o objeto iniciado', function(err){
-    setTimeout(function() {
-        console.log("")
+fs.writeFile('Arquivo.txt', 'oi', function(err){
+    setTimeout(function(){
+        console.log('Arquivo criado, pronto para iniciar!')
     }, 1000)
 })
 
