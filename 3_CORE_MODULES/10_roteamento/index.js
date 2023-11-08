@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
     if (filename.includes('html')) {
         if (fs.existsSync(filename)) {
             fs.readFile(filename, function (err, data) {
-                res.write(200, { 'Contenty-Type': 'text/html' })
+                res.writeHead(200, { 'Content-Type': 'text/html' })
                 res.write(data)
                 return res.end()
             })
