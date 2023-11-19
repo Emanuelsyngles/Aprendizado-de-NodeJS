@@ -23,3 +23,11 @@ app.listen(port, () => {
     console.log(`O servidor está alocado na porta ${port}`)
 })
 
+app.get('/users/create', (req, res) => {
+    res.sendFile(`${basePath}/userform.html`)
+})
+
+app.post('users/save', (req, res) => {
+
+})
+
