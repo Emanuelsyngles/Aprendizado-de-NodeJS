@@ -1,43 +1,24 @@
+const exp = require("constants")
 const express = require("express")
 const app = express()
 const port = 3000 // variável ambiente
 
 const path = require('path')
 
-const basePath = path.join(__dirname, 'templates')
+const usersRoutes = require('./users')
 
-// ler o body
+// ler o lobby
 app.use(
     express.urlencoded({
-        extended: true,
+        extended:true,
     }),
 )
 
-app.use(express.json());
+app.use(express.json)
 
-app.get('/users/add', (req, res) => {
-    res.sendFile(`${basePath}/userform.html`)
-})
+const basePath = path.join(__dirname, 'templates')
 
-app.post('/users/save', (req, res) => {
-    console.log(req.body)
-
-    const name = req.body.name
-    const age = req.body.age
-
-    console.log(`O nome do usuário é ${name} e sua idade é de ${age} anos`)
-
-    res.sendFile(`${basePath}/userform.html`)
-})
-
-app.get('/users/:id', (req, res) => {
-    const id = req.params.id
-
-    // leitura da tabela users, resgatar um usuário do banco
-    console.log(`Estamos buscando pelo usuário: ${id}`)
-
-    res.sendFile(`${basePath}/users.html`)
-})
+app.use('/users', users)
 
 app.get('/', (req, res) => {
     res.sendFile(`${basePath}/index.html`)
