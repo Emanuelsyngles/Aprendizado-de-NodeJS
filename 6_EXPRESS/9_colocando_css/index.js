@@ -9,7 +9,7 @@ const usersRoutes = require('./users')
 // ler o lobby
 app.use(
     express.urlencoded({
-        extended:true,
+        extended: true,
     }),
 )
 
