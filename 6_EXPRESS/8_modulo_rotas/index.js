@@ -17,7 +17,7 @@ app.use(express.json())
 
 const basePath = path.join(__dirname, 'templates')
 
-app.use('/users', users)
+app.use('/users', usersRoutes)
 
 app.get('/', (req, res) => {
     res.sendFile(`${basePath}/index.html`)
