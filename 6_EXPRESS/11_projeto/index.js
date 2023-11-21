@@ -26,8 +26,12 @@ app.get('/', (req, res) => {
     res.sendFile(`${basePath}/index.html`)
 })
 
-app.get('/', (req, res) => {
+app.get('/sapatos', (req, res) => {
     res.sendFile(`${basePath}/sapatos.html`)
+})
+
+app.get('/loja', (req, res) => {
+    res.sendFile(`${basePath}/loja.html`)
 })
 
 app.listen(port, () => {
