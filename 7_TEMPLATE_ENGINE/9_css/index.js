@@ -10,6 +10,8 @@ const hbs = exphbs.create({
 app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
 
+app.use(express.static('public')) 
+
 app.get('/dashbord', (req, res) => {
 
     const items = ['Item a', 'Item b', 'Item c', 'Item d', 'Item e']
