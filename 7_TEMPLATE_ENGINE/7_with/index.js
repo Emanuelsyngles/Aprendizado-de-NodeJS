@@ -10,12 +10,12 @@ app.get('/dashbord', (req, res) => {
 
     const items = ['Item a', 'Item b', 'Item c', 'Item d', 'Item e']
 
-    res.render('dashbord', {items})
+    res.render('dashbord', { items })
 })
 
-app.get('/', (req, res) =>{
+app.get('/', (req, res) => {
 
-    const user = { 
+    const user = {
         name: 'Emanuel',
         surname: 'Leal',
         age: 21,
@@ -27,9 +27,20 @@ app.get('/', (req, res) =>{
 
     const approved = true
 
-    res.render('home', {user: user, palavra, auth, approved})
+    res.render('home', { user: user, palavra, auth, approved })
 })
 
-app.listen(3000, ()=> {
+app.get('/post', (req, res) => {
+    const post = {
+        title: 'Aprender Node.js',
+        category: 'Javascript',
+        body: 'Este artigo vai te ajudar a aprender Node.js...',
+        comments: 4,
+    }
+
+    res.render('blogpost', { post })
+})
+
+app.listen(3000, () => {
     console.log('App funcionando!')
 })
