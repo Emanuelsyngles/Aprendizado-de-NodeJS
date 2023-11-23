@@ -12,17 +12,19 @@ app.get('/dashbord', (req, res) => {
 
 app.get('/', (req, res) =>{
 
-    const palavra = 'Teste'
-
-    const auth = true
-
     const user = { 
         name: 'Emanuel',
         surname: 'Leal',
         age: 21,
     }
 
-    res.render('home', {user: user, palavra, auth})
+    const palavra = 'Teste'
+
+    const auth = true
+
+    const approved = true
+
+    res.render('home', {user: user, palavra, auth, approved})
 })
 
 app.listen(3000, ()=> {
