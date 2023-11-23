@@ -6,10 +6,14 @@ const app = express()
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
+app.get('/dashbord', (req, res) => {
+    res.render('dashbord')
+})
+
 app.get('/', (req, res) =>{
 
     const palavra = 'Teste'
-    
+
     const auth = true
 
     const user = { 
