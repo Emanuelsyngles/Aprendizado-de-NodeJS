@@ -26,8 +26,8 @@ conn.connect(function (err) {
     }
 
     console.log('Conectou ao MySql')
+})
 
-    app.listen(3000, () => {
-        console.log('App rodando!')
-    })
+app.listen(3000, () => {
+    console.log('App rodando!')
 })
