@@ -20,9 +20,9 @@ const conn = mysql.createConnection({
     database: 'nodemysql'
 })
 
-conn.connect(function(err) {
+conn.connect(function (err) {
 
-    if(err) {
+    if (err) {
         console.log(err)
     }
 
