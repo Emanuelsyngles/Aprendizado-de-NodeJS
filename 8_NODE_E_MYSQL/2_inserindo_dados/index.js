@@ -4,7 +4,7 @@ const mysql = require('mysql2')
 
 const app = express()
 
-app.engine('handlebars', exphbs.create)
+app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
@@ -25,7 +25,7 @@ conn.connect(function(err) {
     if(err) {
         console.log(err)
     }
-
+    
     console.log('Conectou ao MySql')
 
     app.listen(3000)
