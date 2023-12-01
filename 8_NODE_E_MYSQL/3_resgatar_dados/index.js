@@ -28,7 +28,7 @@ app.post('/books/insertbook', (req, res) => {
 
     const sql = `INSERT INTO books (title, pageqty) VALUES ('${title}', '${pageqty}')`
 
-    conn.query(sql, function (err) {
+    conn.query(sql, function (err, data) {
         if (err) {
             console.log(err)
             return
@@ -50,12 +50,12 @@ app.get('/books', (req, res) => {
             console.log(err)
             return
         }
+
         const books = data
 
         console.log(books)
 
         res.render('books', { books })
-
     })
 })
 
@@ -76,4 +76,7 @@ conn.connect(function (err) {
 
     app.listen(3000)
 })
+
+
+
 
