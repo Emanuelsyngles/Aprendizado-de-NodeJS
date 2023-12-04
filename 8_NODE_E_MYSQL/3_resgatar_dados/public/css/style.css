@@ -26,3 +26,22 @@ h1 {
     padding: 5px;
 }
 
+/*BOOKS*/
+
+.books-container div {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.add{
+    text-decoration: none;
+    background-color: coral;
+    color: black;
+    padding: 5px;
+    border-radius: 10px;
+}
