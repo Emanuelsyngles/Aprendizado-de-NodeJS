@@ -106,7 +106,7 @@ app.post('/books/updatebook', (req, res) => {
     const sql = `UPDATE books SET title = '${title}', pageqty = '${pageqty}' WHERE id = '${id}'`
 
     conn.query(sql, function (err) {
-        if(err) {
+        if (err) {
             console.log(err)
             return
         }
@@ -121,8 +121,8 @@ app.post('/books/remove/:id', (req, res) => {
 
     const sql = `DELETE FROM books WHERE id = ${id}`
 
-    conn.query(sql, function(err) {
-        if(err) {
+    conn.query(sql, function (err) {
+        if (err) {
             console.log(err)
             return
         }
