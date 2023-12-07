@@ -85,9 +85,11 @@ app.get('/books/:id', (req, res) => {
 
     const id = req.params.id
 
-    const sql = `SELECT * FROM books WHERE id = ${id}`
+    const sql = `SELECT * FROM books WHERE ?? = ?`
 
-    pool.query(sql, function (err, data) {
+    const data = ['id', id]
+
+    pool.query(sql, data, function (err, data) {
         if (err) {
             console.log(err)
             return
@@ -106,7 +108,8 @@ app.post('/books/updatebook', (req, res) => {
     const title = req.body.title
     const pageqty = req.body.pageqty
 
-    const sql = `UPDATE books SET title = '${title}', pageqty = '${pageqty}' WHERE id = '${id}'`
+    const sql = `UPDATE books SET ?? = ? , ?? = ? WHERE ?? = ?`
+    const data = ['title', title, 'pageqty', pageqty, 'id', id]
 
     pool.query(sql, function (err) {
         if (err) {
@@ -122,9 +125,10 @@ app.post('/books/remove/:id', (req, res) => {
 
     const id = req.params.id
 
-    const sql = `DELETE FROM books WHERE id = ${id}`
+    const sql = `DELETE FROM books WHERE ?? = ?`
+    const data = ['id', id]
 
-    pool.query(sql, function (err) {
+    pool.query(sql, data, function (err) {
         if (err) {
             console.log(err)
             return
