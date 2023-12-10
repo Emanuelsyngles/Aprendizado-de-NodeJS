@@ -53,42 +53,4 @@ h1 {
     border: 1px solid black;
 }
 
-/*BOOKS*/
 
-.books-container div {
-    border-bottom: 1px solid #ccc;
-    padding: 5px;
-    margin: 5px;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.add{
-    text-decoration: none;
-    background-color: coral;
-    color: black;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-/* BOOK */
-
-#book-page {
-    padding: 2em;
-}
-
-#book-page .container{
-    text-align: center;
-}
-
-.actions {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-}
-
-.actions a {
-    margin-right: 1em;
-}
