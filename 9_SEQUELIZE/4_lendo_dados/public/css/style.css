@@ -66,11 +66,19 @@ h1 {
 
 .container {
     display: flex;
-    flex-direction: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 10px;
 }
 
-.item {
-    border-bottom: 1px solid black;
+.container .item {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    flex: 1 1 29%;
+    max-width: 29%;
+    height: 75px;
 }
