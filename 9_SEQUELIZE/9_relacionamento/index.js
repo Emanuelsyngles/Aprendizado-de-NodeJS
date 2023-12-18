@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars')
 const conn = require('./db/conn')
 
 const User = require('./models/User')
+const Address = require('./models/Adress')
 
 const app = express()
 
@@ -29,15 +30,15 @@ app.post('/users/create', async (req, res) => {
     const occupation = req.body.occupation
     let newsletter = req.body.newsletter
 
-    if(newsletter == 'on') {
+    if (newsletter == 'on') {
         newsletter = true
-    }else {
+    } else {
         newsletter = false
     }
 
     console.log(req.body)
 
-    await User.create({name, occupation, newsletter})
+    await User.create({ name, occupation, newsletter })
 
     res.redirect('/')
 })
@@ -45,21 +46,21 @@ app.post('/users/create', async (req, res) => {
 app.get('/users/:id', async (req, res) => {
     const id = req.params.id
 
-    const user = await User.findOne({ raw: true, where: { id: id }})
+    const user = await User.findOne({ raw: true, where: { id: id } })
 
     res.render('userview', { user })
 })
 
-app.post('/users/delete/:id', async(req, res) => {
+app.post('/users/delete/:id', async (req, res) => {
 
     const id = req.params.id
 
-    await User.destroy({ where: {id: id} })
+    await User.destroy({ where: { id: id } })
 
     res.redirect('/')
 })
 
-app.get('/users/edit/:id', async(req, res) => {
+app.get('/users/edit/:id', async (req, res) => {
     const id = req.params.id
 
     const user = await User.findOne({ raw: true, where: { id: id } })
@@ -74,10 +75,10 @@ app.post('/users/update', async (req, res) => {
     const occupation = req.body.occupation
     let newsletter = req.body.newsletter
 
-    if(newsletter === 'on') {
+    if (newsletter === 'on') {
         newsletter = true
-    }else{
-        newsletter = false 
+    } else {
+        newsletter = false
     }
 
     const userData = {
@@ -87,7 +88,7 @@ app.post('/users/update', async (req, res) => {
         newsletter
     }
 
-    await User.update(userData, { where: {id: id } })
+    await User.update(userData, { where: { id: id } })
 
     res.redirect('/')
 
@@ -95,16 +96,19 @@ app.post('/users/update', async (req, res) => {
 
 app.get('/', async (req, res) => {
 
-    const users = await User.findAll({raw: true})
+    const users = await User.findAll({ raw: true })
 
     console.log(users)
 
     res.render('home', { users: users });
 })
 
-conn.sync().then(() => {
-    app.listen(3000)
-}).catch((err) => console.log(err))
+conn
+    //.sync()
+    .sync({ force: true })
+    .then(() => {
+        app.listen(3000)
+    }).catch((err) => console.log(err))
 
 
 

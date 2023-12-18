@@ -21,4 +21,6 @@ const Addresss = db.define('Address', {
 
 });
 
+Addresss.belongsTo(User)
+
 module.exports = Addresss
