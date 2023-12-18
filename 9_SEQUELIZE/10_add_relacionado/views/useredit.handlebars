@@ -6,7 +6,7 @@
         <input type="text" name="name" placeholder="Digite o nome do usuário" value="{{user.name}}">
     </div>
     <div class="form-control">
-        <label for="occupation">Profsissão:</label>
+        <label for="occupation">Profissão:</label>
         <input type="text" name="occupation" placeholder="Digite a profissão" value="{{user.occupation}}">      
     </div>
     <div class="form-control form-checkbox">
@@ -19,3 +19,25 @@
     </div>
     <input type="submit" value="Editar">
 </form>
+<div class="adress-container">
+    <h2>Endereços</h2>
+    <form action="/address/create">
+        <input type="hidden" name="UserId" value="{{user.id}}">
+        <div class="form-control">
+            <label for="street">
+                <input type="text" name="street" placeholder="Digite a rua">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="number">
+                <input type="text" name="number" placeholder="Digite o número da residência">
+            </label>
+        </div>
+        <div class="form-control">
+            <label for="city">
+                <input type="text" name="city" placeholder="Digite o nome da cidade">
+            </label>
+        </div>
+        <input type="submit" value="Incluir endereço">
+    </form>
+</div>
