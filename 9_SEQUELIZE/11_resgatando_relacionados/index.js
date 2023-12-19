@@ -122,8 +122,7 @@ app.post('/address/create', async (req, res) => {
     res.redirect(`/users/edit/${UserId}`)
 })
 
-conn
-    .sync()
+conn.sync()
     //.sync({ force: true })
     .then(() => {
         app.listen(3000)
