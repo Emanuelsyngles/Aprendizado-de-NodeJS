@@ -4,7 +4,7 @@ const db = require('../db/conn')
 
 const User = require('./User')
 
-const Addresss = db.define('Address', {
+const Address = db.define('Address', {
 
     street: {
         type: DataTypes.STRING,
@@ -21,6 +21,7 @@ const Addresss = db.define('Address', {
 
 });
 
-Addresss.belongsTo(User)
+User.hasMany(Address)
+Address.belongsTo(User)
 
-module.exports = Addresss
+module.exports = Address

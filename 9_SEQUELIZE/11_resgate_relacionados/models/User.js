@@ -1,7 +1,6 @@
 const { DataTypes } = require('sequelize')
 
-const db = require('../db/conn');
-const Address = require('./Address');
+const db = require('../db/conn')
 
 const User = db.define('User', {
     name: {
@@ -17,7 +16,4 @@ const User = db.define('User', {
     },
 })
 
-User.hasMany(Address)
-Address.belongsTo(User)
-
-module.exports = User;
+module.exports = User
