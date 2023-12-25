@@ -134,3 +134,14 @@ h1 {
 .adress-container form {
     width: 300px;
 }
+
+.address-list div {
+    display: flex;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ddd;
+}
+
+.address-list form {
+    margin-left: 1em;
+}
