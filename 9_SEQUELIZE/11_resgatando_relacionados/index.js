@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars')
 const conn = require('./db/conn')
 
 const User = require('./models/User')
-const Address = require('./models/Adress')
+const Address = require('./models/Address')
 
 const app = express()
 
@@ -63,9 +63,14 @@ app.post('/users/delete/:id', async (req, res) => {
 app.get('/users/edit/:id', async (req, res) => {
     const id = req.params.id
 
-    const user = await User.findOne({ raw: true, where: { id: id } })
+    try {
+        const user = await User.findOne({ include: Address, where: { id: id } })
 
-    res.render('useredit', { user })
+        res.render('useredit', { user: user.get({ plain: true }) })
+        
+    } catch(error) {
+        console.log(error)
+    }
 })
 
 app.post('/users/update', async (req, res) => {
@@ -122,8 +127,9 @@ app.post('/address/create', async (req, res) => {
     res.redirect(`/users/edit/${UserId}`)
 })
 
-conn.sync()
-    //.sync({ force: true })
+conn
+    //.sync()
+    .sync({ force: true })
     .then(() => {
         app.listen(3000)
     }).catch((err) => console.log(err))
