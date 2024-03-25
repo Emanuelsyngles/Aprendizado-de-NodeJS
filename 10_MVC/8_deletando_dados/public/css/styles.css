@@ -103,11 +103,21 @@ form input[type="submit"] {
 }
 
 .actions i {
-    font-size: 1em;
+    font-size: 1.6em;
     margin-right: .6em; 
     color: #498313;
 }
 
 .actions i:hover {
     color: #57c21e;
+}
+
+.actions form {
+    margin: 0;
+}
+
+.actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
