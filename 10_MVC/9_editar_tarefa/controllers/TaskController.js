@@ -1,3 +1,4 @@
+const { raw } = require('express')
 const Task = require('../models/Task')
 
 module.exports = class TaskController {
@@ -33,7 +34,7 @@ module.exports = class TaskController {
 
         const id = req.params.id
 
-        const task = await Task.findOne({ where: {id: id} })
+        const task = await Task.findOne({ where: {id: id} ,raw: true})
 
         res.render('tasks/edit', { task })
 
